@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 .app-container {
-    background: #003554;
+    background: #006765;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -17,15 +17,15 @@ body {
     max-width: 400px;
     text-align: center;
 }
-h1 { color: #00A6FB; }
+h1 { color: #000000; }
 #search-form { display: flex; gap: 0.5rem; margin: 1.5rem 0; }
 #city-input {
-    flex-grow: 1; padding: 0.75rem; border: 1px solid #006494;
+    flex-grow: 1; padding: 0.75rem; border: 1px solid #0080bb;
     border-radius: 0.5rem; background: #051923; color: #E0E1DD;
     font-size: 1rem;
 }
 #search-form button {
-    padding: 0.75rem 1rem; background-color: #00A6FB; color: #051923;
+    padding: 0.75rem 1rem; background-color: #5ff7ff; color: #051923;
     border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: bold;
     cursor: pointer; transition: background-color 0.2s;
 }
@@ -33,3 +33,26 @@ h1 { color: #00A6FB; }
 .weather-info { margin-top: 1.5rem; min-height: 150px; }
 .weather-info .temp { font-size: 3rem; font-weight: bold; margin: 0.5rem 0; }
 .error { color: #ff4d4d; font-weight: bold; }
+
+* {
+    box-sizing: border-box;
+}
+.forecast-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0 10px 10px;
+}
+
+.forecast-card {
+    background-color: #7193d3;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 120px;
+    max-width: 140px;
+    text-align: center;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
