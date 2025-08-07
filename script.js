@@ -32,6 +32,9 @@ async function getWeather(city) {
         const currentResData = await currentRes.json();
         const forecastData = await forecastRes.json();
 
+        // ✅ บันทึกเมืองล่าสุดลง localStorage
+        localStorage.setItem('lastSearchedCity', city);
+
         displayWeather(currentResData);
         displayForecast(forecastData);
     } catch (error) {
@@ -99,3 +102,10 @@ function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleDateString('th-TH', options);
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const lastCity = localStorage.getItem('lastSearchedCity');
+    if (lastCity) {
+        cityInput.value = lastCity; // แสดงในช่อง input ด้วย (ไม่บังคับ)
+        getWeather(lastCity);
+    }
+});
